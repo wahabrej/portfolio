@@ -14,6 +14,25 @@
   <!--===== SCROLL REVEAL =====-->
   <script src="https://unpkg.com/scrollreveal"></script>
   <title>Wahab Reja</title>
+  <style>
+      .change-content{
+	  width:100px;
+	  
+	  }
+	  .change-content:after{
+	  content:" ";
+	  animation:changetext 10s infinite linear;
+	  color:#00b894;
+	  }
+	  @keyframes changetext{
+	  0%{ content:"MERN";}
+	  35%{ content:"PHP";}
+	  70%{ content:"FLUTTER";}
+	  100%{ content:"UI /UX";}
+	  
+	  
+	  }
+  </style>
 </head>
 
 <body>
@@ -40,13 +59,13 @@
             <a href="#projects" class="nav-link projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a href="#projects" class="nav-link projects">Achivement</a>
+            <a href="#achiv" class="nav-link projects">Achivement</a>
           </li>
           <li class="nav-item">
             <a href="#contact" class="nav-link contact">Contact</a>
           </li>
           <li class="nav-item">
-          <a href = "#" onclick="myFunction()"> <img src="./assets/img/sumoon.png" alt="" height="20px" width="20px" style="background-color: transparent;"> </a>
+          <a href = "#" onclick="myFunction()"> <img src="./assets/img/wahab.jpeg" alt="" height="20px" width="20px" style="background-color: transparent;"> </a>
           </li>
         </ul>
       </div>
@@ -61,12 +80,13 @@
     <!--===== HOME =====-->
     <section class="home bd-grid section" id="home">
       <div class="home-data">
-        <h2 class="home-title">
-          Hi <br />I'am <span class="home-title-color">A.Wahab</span><br />
-         <span id="jobTitle" >MERN Developer</span> 
+        <h2 class="home-title" style="font-size: 40px;">
+          Hi <br />I'am <span class="home-title-color" style="">Mohammad Wahab</span><br />
+          <spane class="change-content"> </spane> <p>Developer</p>
+         <!-- <span id="jobTitle" >MERN and PHP Developer</span>  -->
         </h2>
 
-        <a href="https://drive.google.com/file/d/1OL6oLWI1W9gC66g7OWJNsEWulaBHev7a/view?usp=sharing" target="_blank"
+        <a href="https://drive.google.com/file/d/1-jaB2-Q57h6Y8mhkNxCxkHePBJGS9IRD/view?usp=sharing" target="_blank"
           class="button">Resume</a>
 
       </div>
@@ -74,12 +94,12 @@
       <div class="home-social">
         <a href="https://www.linkedin.com/in/md-a-wahab-reja-539b5a226/" target="_blank" class="home-social-icon"><i
             class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/wahabrej" target="_blank" class="home-social-icon"><i
+        <a href="https://github.com/wahabrej?tab=repositories" target="_blank" class="home-social-icon"><i
             class="bx bxl-github"></i></a>
       </div>
 
       <div class="home-img">
-        <img src="assets/img/profile_1.jpeg" alt="" />
+        <img src="assets/img/wahab.jpeg" alt="" />
       </div>
     </section>
 
@@ -88,9 +108,6 @@
       <h2 class="section-title">About Me</h2>
 
       <div class="about-container bd-grid">
-        <div class="about-img">
-          <img src="assets/img/profile_1.jpeg" alt="" />
-        </div>
 
         <div style="text-align: center">
           <h2 class="about-subtitle">I'am A. Wahab</h2>
@@ -101,9 +118,11 @@
           <br />
           
           <p>
-            Drop a mail awahab193058@bscse.uiu.ac.bd
-            <i style="color: #4070f4; font-size: 1.2rem; cursor: pointer" class="bx bx-copy" id="copy"></i>
+           <!-- awahab193058@bscse.uiu.ac.bd -->
+            <i style="color: #4070f4; font-size: 0.1rem; cursor: pointer" class="bx bx-copy" id="copy"></i>
           </p>
+          <p>awahab193058@bscse.uiu.ac.bd   ||   awahabewja@gmail.com</p><br>
+          <p>01788426128  ||  01741245192</p>
         </div>
       </div>
     </section>
@@ -118,7 +137,7 @@
           <div class="education-names">
             <!-- <i class="bx bxl-html5 skills-icon"></i> -->
             <span class="education-name">Full Stack Web Development</span> 
-            <p class="education-platform ">Programming Hero</p>
+            <p class="education-platform ">Programming Hero (Free Course)</p>
             <p class="education-duration ">October 2021 - 2022</p>
 
           </div>
@@ -147,7 +166,7 @@
           <div class="skills-data">
             <div class="skills-names">
               <i class="bx bxl-html5 skills-icon"></i>
-              <span class="skills-name">HTML</span>
+              <span class="skills-name">MERN</span>
             </div>
             <!-- <div class="skills-bar skills-html"></div> 
              <div>
@@ -157,7 +176,7 @@
           <div class="skills-data">
             <div class="skills-names">
               <i class="bx bxl-css3 skills-icon"></i>
-              <span class="skills-name">CSS</span>
+              <span class="skills-name">Flutter</span>
             </div>
              <!-- <div class="skills-bar skills-css"></div>  -->
             <!-- <div>
@@ -167,7 +186,7 @@
           <div class="skills-data">
             <div class="skills-names">
               <img class="skills-icon" src="./assets/img/boostrap.jpeg" alt="" />
-              <span class="skills-name">BOOTSTRAP</span>
+              <span class="skills-name">UI / UX</span>
             </div>
              <!-- <div class="skills-bar skills-css"></div>  -->
             <!-- <div>
@@ -292,6 +311,13 @@
               </div>
 
             </div> 
+            <div class="skills-data">
+              <div class="skills-names">
+                <img class="skills-icon" src="./assets/img/dsa.png" alt="" />
+                <span class="skills-name">Good Knowledgh About Project Management</span>
+              </div>
+
+            </div> 
 
           </div>
         </div>
@@ -354,14 +380,14 @@
             <br />REACT |HTML | CSS | BOOTSTRAP | DOM
           </p>
           <div class="project-btns">
-            <a href="https://github.com/tusharsahu2599/medplus" target="_blank" class="small-btn button">
+            <a href="https://github.com/wahabrej/Blog1" target="_blank" class="small-btn button">
 
               <i class="bx bxl-github"></i>
             </a>
-            <a href="https://curious-strudel-81dc09.netlify.app/home" target="_blank" class="small-btn button">
+            <!-- <a href="https://curious-strudel-81dc09.netlify.app/home" target="_blank" class="small-btn button">
               Live
               
-            </a>
+            </a> -->
          
             </a>
           </div>
@@ -383,10 +409,10 @@
 
               <i class="bx bxl-github"></i>
             </a>
-            <a href="https://rainbow-puffpuff-ba74f6.netlify.app/shop" target="_blank" class="small-btn button">
+            <!-- <a href="https://rainbow-puffpuff-ba74f6.netlify.app/shop" target="_blank" class="small-btn button">
               Live
               <!-- <i class="bx bx-link-external"></i> -->
-            </a>
+            </a> -->
          
           </div>
         </div>
@@ -426,18 +452,18 @@
 
               <i class="bx bxl-github"></i>
             </a>
-            <a href="https://lambent-selkie-cebf70.netlify.app/" target="_blank" class="small-btn button">
+            <!-- <a href="https://lambent-selkie-cebf70.netlify.app/" target="_blank" class="small-btn button">
 
              Live
-            </a>
+            </a> -->
             
           
             </a>
           </div>
         </div>
         
-        <!-- <div class="project-img">
-          <img src="assets/img/portfolio.PNG" alt="cult.fit" />
+        <div class="project-img">
+          <img src="assets/img/portfolio.JPG" alt="cult.fit" />
           <p class="project-title">Personal Portfolio Website</p>
           <p class="project-subtitle">
             A portfolio web application.
@@ -448,7 +474,7 @@
             <br />HTML | CSS | DOM
           </p>
           <div class="project-btns">
-            <a href="https://github.com/tusharsahu2599/portfolio" target="_blank" class="small-btn button">
+            <a href="https://github.com/wahabrej/portfolio" target="_blank" class="small-btn button">
 
               <i class="bx bxl-github"></i>
             </a>
@@ -456,7 +482,7 @@
              
             </a>
           </div>
-        </div> -->
+        </div>
 
         <div class="project-img">
           <img src="assets/img/Doctor.JPG" alt="Swiggy.com" />
@@ -471,13 +497,13 @@
             React | Redux | HTML | CSS | BOOTSTRAP
           </p>
           <div class="project-btns">
-            <a href="https://github.com/wahabrej/doctor-portal" target="_blank"
+            <!-- <a href="https://github.com/wahabrej/doctor-portal" target="_blank"
               class="small-btn button">
               Code<i class="bx bxl-github"></i>
-            </a>
-            <a href="https://65182f3711fd762ac2605ccc--silly-llama-43fb82.netlify.app/" target="_blank" class="small-btn button">
+            </a> -->
+            <!-- <a href="https://65182f3711fd762ac2605ccc--silly-llama-43fb82.netlify.app/" target="_blank" class="small-btn button">
               Live<i class="bx bx-link-external"></i>
-            </a>
+            </a> -->
           </div>
         </div>
 
@@ -497,20 +523,20 @@
            React | Redux | Rest API | HTML | CSS
           </p>
           <div class="project-btns">
-            <a href="https://github.com/wahabrej/amazon"
+            <!-- <a href="https://github.com/wahabrej/amazon"
               target="_blank" class="small-btn button">
               Code<i class="bx bxl-github"></i>
-            </a>
-            <a href="https://helpful-jalebi-fd6cdd.netlify.app/" target="_blank" class="small-btn button">
+            </a> -->
+            <!-- <a href="https://helpful-jalebi-fd6cdd.netlify.app/" target="_blank" class="small-btn button">
               Live<i class="bx bx-link-external"></i>
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
     </section>
   </main>
 <!--===== Achivement =====-->
-<section class="skills section" id="skills">
+<section class="skills section" id="achiv">
   <h2 class="section-title">Achievement</h2>
 
   <div class="skills-container bd-grid">
@@ -572,7 +598,7 @@
       <a href="mailto:awahab193058@bscse.uiu.ac.bd" target="_blank" class="footer-icon"><i class="bx bx-mail-send">
           <br />
           E-mail</i></a>
-      <a href="tel:+91 8839819475" target="_blank" class="footer-icon"><i class="bx bx-phone">
+      <a href="tel:+088 01788426128" target="_blank" class="footer-icon"><i class="bx bx-phone">
           <br />
           Phone</i></a>
       <a href="https://github.com/wahabrej" target="_blank" class="footer-icon"><i
