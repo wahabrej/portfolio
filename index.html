@@ -6,205 +6,309 @@
 <title>Mohammad Wahab | Mobile Engineer</title>
 
 <style>
+:root {
+  --primary: #3b82f6;
+  --bg: #0b1020;
+  --card: #11162a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 body {
-  background: #0f172a;
-  color: #e5e7eb;
-  line-height: 1.6;
+  background: radial-gradient(circle at top, #101a3a, #050816);
+  color: var(--text);
+  overflow-x: hidden;
 }
 
-header {
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  padding: 40px 20px;
-  text-align: center;
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  padding: 80px 8%;
+  gap: 50px;
 }
 
-header h1 {
-  font-size: 2.6rem;
+.hero-left h1 {
+  font-size: 3.2rem;
+  line-height: 1.1;
 }
 
-header p {
-  font-size: 1.2rem;
-  margin: 10px 0;
+.hero-left h1 span {
+  color: var(--primary);
 }
 
-.contact span {
-  display: block;
-  margin-top: 5px;
+.dynamic {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 20px 0;
+  color: #93c5fd;
+  height: 40px;
 }
 
-.links a {
-  margin: 10px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+.hero-left p {
+  color: var(--muted);
+  max-width: 520px;
+  margin-bottom: 30px;
 }
 
+.hero-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.hero-right {
+  display: flex;
+  justify-content: center;
+}
+
+.profile {
+  width: 280px;
+  height: 360px;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  border-radius: 24px;
+  padding: 6px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.profile-inner {
+  background: #020617;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== SECTIONS ===== */
 section {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: auto;
+  padding: 90px 8%;
 }
 
 h2 {
-  margin-bottom: 20px;
-  color: #60a5fa;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #bfdbfe;
 }
 
+/* ===== CARDS ===== */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
 .card {
-  background: #020617;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  background: var(--card);
+  padding: 25px;
+  border-radius: 18px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.card span {
-  font-size: 0.9rem;
-  color: #94a3b8;
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(59,130,246,0.15);
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #93c5fd;
+}
+
+.card p, .card li {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
 ul {
+  padding-left: 18px;
   margin-top: 10px;
-  padding-left: 20px;
 }
 
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
-
-.project {
-  background: #020617;
-  padding: 15px;
-  border-radius: 8px;
-  transition: transform 0.3s;
-}
-
-.project:hover {
-  transform: scale(1.05);
-}
-
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 40px;
+  color: var(--muted);
   background: #020617;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-info {
+    justify-content: center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Mohammad Wahab</h1>
-  <p>Senior Flutter, Swift & Kotlin Engineer</p>
-  <div class="contact">
-    <span>📍 Dhaka, Bangladesh</span>
-    <span>📞 +880 1788 426128</span>
-    <span>✉️ awahabreja1@gmail.com</span>
-  </div>
-  <div class="links">
-    <a href="#">LinkedIn</a>
-    <a href="#">GitHub</a>
-  </div>
-</header>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <h1>Mohammad <span>Wahab</span></h1>
 
-<section>
-  <h2>Professional Summary</h2>
-  <p>
-    Senior Mobile Application Developer with 2+ years of experience delivering
-    high-performance Flutter and iOS (Swift) applications. Shipped 7+ production
-    apps on App Store and Google Play. Specialized in WebRTC video calling,
-    scalable architecture, payments, and AI-powered features.
-  </p>
-</section>
+    <div class="dynamic" id="dynamicText"></div>
 
-<section>
-  <h2>Technical Skills</h2>
+    <p>
+      Senior Mobile Application Engineer with 2+ years of commercial experience
+      building high-performance Flutter, iOS (Swift), and Android (Kotlin) apps.
+      Shipped 7+ production applications with real-time, payment, and AI features.
+    </p>
+
+    <div class="hero-info">
+      <span>📍 Dhaka, Bangladesh</span>
+      <span>📞 +880 1788 426128</span>
+      <span>✉️ awahabreja1@gmail.com</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="profile">
+      <div class="profile-inner">
+        Your Professional Photo
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKILLS -->
+<section class="reveal">
+  <h2>Core Expertise</h2>
   <div class="grid">
-    <div><strong>Languages</strong><p>Dart, Swift, Kotlin, C, C++, Java, JavaScript, Python, PHP</p></div>
-    <div><strong>Frameworks</strong><p>Flutter, SwiftUI, UIKit</p></div>
-    <div><strong>State Management</strong><p>Riverpod, Provider, GetX</p></div>
-    <div><strong>Backend</strong><p>REST APIs, WebRTC, WebSocket, GraphQL</p></div>
-    <div><strong>Cloud</strong><p>Firebase, FCM, Apple & Google Sign-In</p></div>
-    <div><strong>Payments</strong><p>Stripe, Apple Pay, Google Pay, PayPal</p></div>
+    <div class="card">
+      <h3>Mobile Development</h3>
+      <p>Flutter, SwiftUI, UIKit, Android (Kotlin)</p>
+    </div>
+    <div class="card">
+      <h3>Architecture</h3>
+      <p>Clean Architecture, MVVM, Repository Pattern, OOP</p>
+    </div>
+    <div class="card">
+      <h3>Real-Time & AI</h3>
+      <p>WebRTC, WebSocket, AI Chat (OpenAI / Gemini)</p>
+    </div>
+    <div class="card">
+      <h3>Payments</h3>
+      <p>Stripe, Apple Pay, Google Pay, PayPal, In-App Purchases</p>
+    </div>
+    <div class="card">
+      <h3>Firebase & Cloud</h3>
+      <p>Auth, Firestore, Realtime DB, FCM, Social Sign-In</p>
+    </div>
+    <div class="card">
+      <h3>Deployment</h3>
+      <p>App Store Connect, Google Play Console, TestFlight</p>
+    </div>
   </div>
 </section>
 
-<section>
+<!-- EXPERIENCE -->
+<section class="reveal">
   <h2>Professional Experience</h2>
 
   <div class="card">
     <h3>Senior Flutter & Swift Developer</h3>
-    <span>Softvench Delta | Jan 2024 – Present</span>
+    <p>Softvench Delta — Jan 2024 to Present</p>
     <ul>
-      <li>Developed enterprise Flutter & iOS apps using Clean Architecture</li>
-      <li>Implemented WebRTC 1:1 & group video calling</li>
-      <li>Integrated Stripe, Apple Pay & Google Pay</li>
-      <li>Reduced app size by 20% and startup time by 30%</li>
-      <li>Managed App Store & Play Store releases</li>
+      <li>Developed enterprise Flutter & iOS applications</li>
+      <li>Implemented low-latency WebRTC video calling</li>
+      <li>Integrated Stripe, Apple Pay, Google Pay</li>
+      <li>Reduced app size by 20% & startup time by 30%</li>
     </ul>
   </div>
+
+  <br>
 
   <div class="card">
     <h3>Flutter Developer Intern</h3>
-    <span>United Group (Orange Solution Ltd) | Aug 2023 – Jan 2024</span>
+    <p>United Group (Orange Solution Ltd) — Aug 2023 to Jan 2024</p>
     <ul>
       <li>Built scalable Flutter applications</li>
-      <li>Created data-driven UI using Provider</li>
-      <li>Improved performance by 30%</li>
+      <li>Optimized performance & reduced app size</li>
     </ul>
   </div>
 </section>
 
-<section>
-  <h2>Production Applications</h2>
-  <div class="projects">
-    <div class="project">Employee Management App (iOS)</div>
-    <div class="project">Service Job Assignment App (iOS)</div>
-    <div class="project">Vecimarket (Android)</div>
-    <div class="project">Panic Attack Game Timer (Android & iOS)</div>
-    <div class="project">Lawn Lemur Service App (Android)</div>
-    <div class="project">Employee Management App (Android)</div>
+<!-- EDUCATION -->
+<section class="reveal">
+  <h2>Education</h2>
+  <div class="card">
+    <p><strong>BSc in Computer Science & Engineering</strong><br>
+      United International University, Dhaka — 2024</p>
   </div>
 </section>
 
-<section>
-  <h2>Education</h2>
-  <p><strong>BSc in Computer Science & Engineering</strong><br>
-  United International University, Dhaka — 2024</p>
-  <p>HSC — 2019 | SSC — 2017</p>
-</section>
-
 <footer>
-  <p>© 2026 Mohammad Wahab</p>
+  © 2026 Mohammad Wahab — Senior Mobile Engineer
 </footer>
 
 <script>
-const elements = document.querySelectorAll(".card, .project");
-elements.forEach(el => {
-  el.style.opacity = "0";
-  el.style.transform = "translateY(30px)";
-  el.style.transition = "0.6s ease";
-});
+/* Dynamic Expertise Text */
+const roles = [
+  "Flutter Engineer",
+  "iOS (Swift) Developer",
+  "Android (Kotlin) Developer",
+  "Real-Time App Specialist",
+  "Mobile Architecture Expert"
+];
 
+let i = 0;
+const el = document.getElementById("dynamicText");
+
+function rotateText() {
+  el.style.opacity = 0;
+  setTimeout(() => {
+    el.textContent = roles[i];
+    el.style.opacity = 1;
+    i = (i + 1) % roles.length;
+  }, 400);
+}
+rotateText();
+setInterval(rotateText, 2500);
+
+/* Scroll Reveal */
+const reveals = document.querySelectorAll(".reveal");
 window.addEventListener("scroll", () => {
-  elements.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
+  reveals.forEach(r => {
+    if (r.getBoundingClientRect().top < window.innerHeight - 100) {
+      r.classList.add("show");
     }
   });
 });
