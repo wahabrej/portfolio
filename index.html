@@ -3,179 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammad Wahab | Senior Mobile Engineer</title>
+<title>Mohammad Wahab | Mobile Software Engineer</title>
 
 <style>
-:root {
-  --primary: #3b82f6;
-  --secondary: #22d3ee;
-  --bg: #0b1020;
-  --card: rgba(255,255,255,0.06);
-  --border: rgba(255,255,255,0.12);
-  --text: #e5e7eb;
-  --muted: #9ca3af;
+:root{
+  --bg:#0b1220;
+  --panel:#111a2e;
+  --card:#151f36;
+  --primary:#ff6b4a;
+  --secondary:#4fc3f7;
+  --text:#e6eaf2;
+  --muted:#9aa4bf;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-body {
-  background: radial-gradient(circle at top, #101a3a, #050816);
-  color: var(--text);
-  overflow-x: hidden;
+body{
+  background: linear-gradient(120deg,#0b1220,#070b14);
+  color:var(--text);
 }
 
-/* ===== HEADER ===== */
-header {
-  padding: 80px 8%;
-  display: grid;
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:grid;
   grid-template-columns: 1.2fr 1fr;
-  align-items: center;
-  gap: 50px;
+  gap:60px;
+  padding:70px 8%;
+  align-items:center;
 }
 
-header h1 {
-  font-size: 3.4rem;
-  line-height: 1.1;
+.hero-left h1{
+  font-size:3.2rem;
+  font-weight:700;
 }
 
-header h1 span {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-left h1 span{
+  color:var(--primary);
 }
 
-header p {
-  font-size: 1.4rem;
-  margin: 15px 0 25px;
-  color: #93c5fd;
+.hero-role{
+  margin:18px 0;
+  font-size:1.5rem;
+  color:var(--secondary);
+  font-weight:600;
 }
 
-.contact {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  color: var(--muted);
+.hero-left p{
+  max-width:520px;
+  color:var(--muted);
+  line-height:1.7;
 }
 
-.photo {
-  width: 300px;
-  height: 380px;
-  border-radius: 24px;
-  padding: 6px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  gap:16px;
+}
+
+.btn{
+  padding:12px 22px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.btn.primary{
+  background:var(--primary);
+  color:#000;
+}
+
+.btn.outline{
+  background:transparent;
+  border:1px solid var(--primary);
+  color:var(--primary);
+}
+
+.hero-right{
+  display:flex;
+  justify-content:center;
+}
+
+.photo-wrap{
+  width:300px;
+  height:380px;
+  border-radius:22px;
+  padding:6px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
   animation: float 6s ease-in-out infinite;
 }
 
-.photo div {
-  background: #020617;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  font-size: 0.9rem;
+.photo-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:18px;
 }
 
-/* ===== SECTIONS ===== */
-section {
-  padding: 90px 8%;
+/* ================= SECTIONS ================= */
+section{
+  padding:90px 8%;
 }
 
-h2 {
-  font-size: 2.2rem;
-  margin-bottom: 35px;
-  background: linear-gradient(90deg, #bfdbfe, #67e8f9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.section-title{
+  font-size:2.1rem;
+  margin-bottom:40px;
 }
 
-/* ===== GLASS CARDS ===== */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+/* ================= SKILLS TABS ================= */
+.skill-tabs{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
-.card {
-  background: var(--card);
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  padding: 25px;
-  border-radius: 20px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+.skill{
+  background:var(--card);
+  padding:18px 22px;
+  border-radius:14px;
+  transition:.4s;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(59,130,246,0.25);
+.skill:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,.4);
 }
 
-.card h3 {
-  margin-bottom: 10px;
-  color: #93c5fd;
+.skill h3{
+  margin-bottom:10px;
+  color:var(--secondary);
 }
 
-.card p, .card li {
-  color: var(--muted);
-  font-size: 0.95rem;
+.skill p{
+  color:var(--muted);
+  font-size:.95rem;
 }
 
-ul {
-  padding-left: 18px;
-  margin-top: 10px;
+/* ================= EXPERIENCE ================= */
+.exp{
+  background:var(--panel);
+  padding:30px;
+  border-radius:18px;
+  margin-bottom:30px;
 }
 
-/* ===== SKILL TAGS ===== */
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.exp h3{
+  color:var(--secondary);
 }
 
-.tag {
-  padding: 8px 14px;
-  border-radius: 20px;
-  background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(34,211,238,0.2));
-  border: 1px solid var(--border);
-  font-size: 0.85rem;
-  animation: pulse 3s infinite;
+.exp span{
+  color:var(--muted);
+  font-size:.9rem;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 40px;
-  color: var(--muted);
-  background: #020617;
+.exp ul{
+  margin-top:14px;
+  padding-left:18px;
 }
 
-/* ===== ANIMATIONS ===== */
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-18px); }
+.exp li{
+  margin-bottom:8px;
+  color:var(--muted);
 }
 
-@keyframes pulse {
-  0% { opacity: 0.7; }
-  50% { opacity: 1; }
-  100% { opacity: 0.7; }
+/* ================= STATS ================= */
+.stats{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  gap:20px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  header {
-    grid-template-columns: 1fr;
-    text-align: center;
+.stat{
+  background:var(--card);
+  padding:26px;
+  border-radius:16px;
+  text-align:center;
+}
+
+.stat h2{
+  color:var(--primary);
+  font-size:2.1rem;
+}
+
+.stat p{
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#060a14;
+  padding:40px;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* ================= ANIMATION ================= */
+@keyframes float{
+  0%,100%{ transform:translateY(0);}
+  50%{ transform:translateY(-18px);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
   }
-  .contact {
-    justify-content: center;
+  .hero-buttons{
+    justify-content:center;
   }
 }
 </style>
@@ -183,116 +225,108 @@ footer {
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <div>
-    <h1>Mohammad <span>Wahab</span></h1>
-    <p>Senior Flutter • Swift • Kotlin Engineer</p>
-    <div class="contact">
-      <span>📍 Dhaka, Bangladesh</span>
-      <span>📞 +880 1788 426128</span>
-      <span>✉️ awahabreja1@gmail.com</span>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <h1>Hello, <br>I’m <span>Mohammad Wahab</span></h1>
+    <div class="hero-role">Senior Mobile Software Engineer</div>
+
+    <p>
+      Senior Flutter, iOS (Swift), and Android (Kotlin) engineer with 2+ years of
+      commercial experience. Delivered 7+ production-grade mobile applications
+      featuring real-time video calling, secure payments, and high-performance
+      architectures.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="btn primary">Contact Me</button>
+      <button class="btn outline">Download CV</button>
     </div>
   </div>
 
-  <div class="photo">
-    <div>Your Professional Photo</div>
+  <div class="hero-right">
+    <div class="photo-wrap">
+      <img src="wahab.jpg" alt="Mohammad Wahab">
+    </div>
   </div>
-</header>
-
-<!-- SUMMARY -->
-<section>
-  <h2>Professional Summary</h2>
-  <div class="card">
-    Senior Mobile Application Engineer with 2+ years of experience delivering
-    high-performance Flutter, iOS (Swift), and Android (Kotlin) applications.
-    Successfully shipped 7+ production apps with real-time communication,
-    payments, and performance-optimized architectures.
-  </div>
-</section>
+</div>
 
 <!-- SKILLS -->
 <section>
-  <h2>Core Mobile Expertise</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Mobile Platforms</h3>
-      <div class="tags">
-        <div class="tag">Flutter</div>
-        <div class="tag">SwiftUI</div>
-        <div class="tag">UIKit</div>
-        <div class="tag">Android (Kotlin)</div>
-      </div>
+  <h2 class="section-title">Core Expertise</h2>
+
+  <div class="skill-tabs">
+    <div class="skill">
+      <h3>Flutter Development</h3>
+      <p>Dart, Riverpod, Provider, Clean Architecture, Cross-platform apps</p>
     </div>
 
-    <div class="card">
-      <h3>Architecture</h3>
-      <div class="tags">
-        <div class="tag">Clean Architecture</div>
-        <div class="tag">MVVM</div>
-        <div class="tag">Repository Pattern</div>
-      </div>
+    <div class="skill">
+      <h3>iOS Development</h3>
+      <p>Swift, SwiftUI, UIKit, App Store Connect, TestFlight</p>
     </div>
 
-    <div class="card">
-      <h3>Real-Time & Media</h3>
-      <div class="tags">
-        <div class="tag">WebRTC</div>
-        <div class="tag">Audio / Video Calling</div>
-        <div class="tag">Background Handling</div>
-      </div>
+    <div class="skill">
+      <h3>Android Development</h3>
+      <p>Kotlin, Native Android, Google Play Console</p>
     </div>
 
-    <div class="card">
-      <h3>Payments & Store</h3>
-      <div class="tags">
-        <div class="tag">Stripe</div>
-        <div class="tag">Apple Pay</div>
-        <div class="tag">Google Pay</div>
-        <div class="tag">In-App Purchases</div>
-      </div>
+    <div class="skill">
+      <h3>Advanced Features</h3>
+      <p>WebRTC, Audio/Video Calls, Payments, Performance Optimization</p>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section>
-  <h2>Professional Experience</h2>
+  <h2 class="section-title">Experience</h2>
 
-  <div class="card">
+  <div class="exp">
     <h3>Senior Flutter & Swift Developer</h3>
-    <p>Softvench Delta | Jan 2024 – Present</p>
+    <span>Softvench Delta — Jan 2024 to Present</span>
     <ul>
-      <li>Built enterprise-grade Flutter & iOS applications</li>
+      <li>Developed enterprise Flutter & native iOS applications</li>
       <li>Implemented low-latency WebRTC video calling</li>
-      <li>Reduced app size by 20% & startup time by 30%</li>
-      <li>Managed App Store & Play Store releases</li>
+      <li>Integrated Stripe, Apple Pay, Google Pay</li>
+      <li>Reduced app size by 20% and launch time by 30%</li>
     </ul>
   </div>
 
-  <br>
-
-  <div class="card">
+  <div class="exp">
     <h3>Flutter Developer Intern</h3>
-    <p>United Group (Orange Solution Ltd) | Aug 2023 – Jan 2024</p>
+    <span>United Group (Orange Solution Ltd) — Aug 2023 to Jan 2024</span>
     <ul>
-      <li>Delivered scalable Flutter applications</li>
-      <li>Optimized UI performance & memory usage</li>
+      <li>Built scalable Flutter applications</li>
+      <li>Optimized UI performance and memory usage</li>
     </ul>
   </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- STATS -->
 <section>
-  <h2>Education</h2>
-  <div class="card">
-    <strong>BSc in Computer Science & Engineering</strong><br>
-    United International University, Dhaka — 2024
+  <div class="stats">
+    <div class="stat">
+      <h2>7+</h2>
+      <p>Production Apps</p>
+    </div>
+    <div class="stat">
+      <h2>2+</h2>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat">
+      <h2>100%</h2>
+      <p>Store Deployments</p>
+    </div>
+    <div class="stat">
+      <h2>30%</h2>
+      <p>Performance Gain</p>
+    </div>
   </div>
 </section>
 
 <footer>
-  © 2026 Mohammad Wahab — Senior Mobile Engineer
+  © 2026 Mohammad Wahab — Mobile Software Engineer
 </footer>
 
 </body>
