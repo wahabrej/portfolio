@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammad Wahab | Mobile Engineer</title>
+<title>Mohammad Wahab | Senior Mobile Engineer</title>
 
 <style>
 :root {
   --primary: #3b82f6;
+  --secondary: #22d3ee;
   --bg: #0b1020;
-  --card: #11162a;
+  --card: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.12);
   --text: #e5e7eb;
   --muted: #9ca3af;
 }
@@ -18,7 +20,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 body {
@@ -27,62 +29,49 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== HERO ===== */
-.hero {
-  min-height: 100vh;
+/* ===== HEADER ===== */
+header {
+  padding: 80px 8%;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   align-items: center;
-  padding: 80px 8%;
   gap: 50px;
 }
 
-.hero-left h1 {
-  font-size: 3.2rem;
+header h1 {
+  font-size: 3.4rem;
   line-height: 1.1;
 }
 
-.hero-left h1 span {
-  color: var(--primary);
+header h1 span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.dynamic {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin: 20px 0;
+header p {
+  font-size: 1.4rem;
+  margin: 15px 0 25px;
   color: #93c5fd;
-  height: 40px;
 }
 
-.hero-left p {
-  color: var(--muted);
-  max-width: 520px;
-  margin-bottom: 30px;
-}
-
-.hero-info {
+.contact {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
-  font-size: 0.95rem;
   color: var(--muted);
 }
 
-.hero-right {
-  display: flex;
-  justify-content: center;
-}
-
-.profile {
-  width: 280px;
-  height: 360px;
-  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+.photo {
+  width: 300px;
+  height: 380px;
   border-radius: 24px;
   padding: 6px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   animation: float 6s ease-in-out infinite;
 }
 
-.profile-inner {
+.photo div {
   background: #020617;
   width: 100%;
   height: 100%;
@@ -101,11 +90,13 @@ section {
 
 h2 {
   font-size: 2.2rem;
-  margin-bottom: 30px;
-  color: #bfdbfe;
+  margin-bottom: 35px;
+  background: linear-gradient(90deg, #bfdbfe, #67e8f9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* ===== CARDS ===== */
+/* ===== GLASS CARDS ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -114,14 +105,16 @@ h2 {
 
 .card {
   background: var(--card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
   padding: 25px;
-  border-radius: 18px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 20px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(59,130,246,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(59,130,246,0.25);
 }
 
 .card h3 {
@@ -139,6 +132,22 @@ ul {
   margin-top: 10px;
 }
 
+/* ===== SKILL TAGS ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(34,211,238,0.2));
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  animation: pulse 3s infinite;
+}
+
 /* ===== FOOTER ===== */
 footer {
   text-align: center;
@@ -150,27 +159,22 @@ footer {
 /* ===== ANIMATIONS ===== */
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-18px); }
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-
-.reveal.show {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .hero {
+  header {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .hero-info {
+  .contact {
     justify-content: center;
   }
 }
@@ -179,78 +183,90 @@ footer {
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-left">
+<!-- HEADER -->
+<header>
+  <div>
     <h1>Mohammad <span>Wahab</span></h1>
-
-    <div class="dynamic" id="dynamicText"></div>
-
-    <p>
-      Senior Mobile Application Engineer with 2+ years of commercial experience
-      building high-performance Flutter, iOS (Swift), and Android (Kotlin) apps.
-      Shipped 7+ production applications with real-time, payment, and AI features.
-    </p>
-
-    <div class="hero-info">
+    <p>Senior Flutter • Swift • Kotlin Engineer</p>
+    <div class="contact">
       <span>📍 Dhaka, Bangladesh</span>
       <span>📞 +880 1788 426128</span>
       <span>✉️ awahabreja1@gmail.com</span>
     </div>
   </div>
 
-  <div class="hero-right">
-    <div class="profile">
-      <div class="profile-inner">
-        Your Professional Photo
-      </div>
-    </div>
+  <div class="photo">
+    <div>Your Professional Photo</div>
   </div>
-</div>
+</header>
+
+<!-- SUMMARY -->
+<section>
+  <h2>Professional Summary</h2>
+  <div class="card">
+    Senior Mobile Application Engineer with 2+ years of experience delivering
+    high-performance Flutter, iOS (Swift), and Android (Kotlin) applications.
+    Successfully shipped 7+ production apps with real-time communication,
+    payments, and performance-optimized architectures.
+  </div>
+</section>
 
 <!-- SKILLS -->
-<section class="reveal">
-  <h2>Core Expertise</h2>
+<section>
+  <h2>Core Mobile Expertise</h2>
   <div class="grid">
     <div class="card">
-      <h3>Mobile Development</h3>
-      <p>Flutter, SwiftUI, UIKit, Android (Kotlin)</p>
+      <h3>Mobile Platforms</h3>
+      <div class="tags">
+        <div class="tag">Flutter</div>
+        <div class="tag">SwiftUI</div>
+        <div class="tag">UIKit</div>
+        <div class="tag">Android (Kotlin)</div>
+      </div>
     </div>
+
     <div class="card">
       <h3>Architecture</h3>
-      <p>Clean Architecture, MVVM, Repository Pattern, OOP</p>
+      <div class="tags">
+        <div class="tag">Clean Architecture</div>
+        <div class="tag">MVVM</div>
+        <div class="tag">Repository Pattern</div>
+      </div>
     </div>
+
     <div class="card">
-      <h3>Real-Time & AI</h3>
-      <p>WebRTC, WebSocket, AI Chat (OpenAI / Gemini)</p>
+      <h3>Real-Time & Media</h3>
+      <div class="tags">
+        <div class="tag">WebRTC</div>
+        <div class="tag">Audio / Video Calling</div>
+        <div class="tag">Background Handling</div>
+      </div>
     </div>
+
     <div class="card">
-      <h3>Payments</h3>
-      <p>Stripe, Apple Pay, Google Pay, PayPal, In-App Purchases</p>
-    </div>
-    <div class="card">
-      <h3>Firebase & Cloud</h3>
-      <p>Auth, Firestore, Realtime DB, FCM, Social Sign-In</p>
-    </div>
-    <div class="card">
-      <h3>Deployment</h3>
-      <p>App Store Connect, Google Play Console, TestFlight</p>
+      <h3>Payments & Store</h3>
+      <div class="tags">
+        <div class="tag">Stripe</div>
+        <div class="tag">Apple Pay</div>
+        <div class="tag">Google Pay</div>
+        <div class="tag">In-App Purchases</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section class="reveal">
+<section>
   <h2>Professional Experience</h2>
 
   <div class="card">
     <h3>Senior Flutter & Swift Developer</h3>
-    <p>Softvench Delta — Jan 2024 to Present</p>
+    <p>Softvench Delta | Jan 2024 – Present</p>
     <ul>
-      <li>Developed enterprise Flutter & iOS applications</li>
+      <li>Built enterprise-grade Flutter & iOS applications</li>
       <li>Implemented low-latency WebRTC video calling</li>
-      <li>Integrated Stripe, Apple Pay, Google Pay</li>
       <li>Reduced app size by 20% & startup time by 30%</li>
+      <li>Managed App Store & Play Store releases</li>
     </ul>
   </div>
 
@@ -258,61 +274,26 @@ footer {
 
   <div class="card">
     <h3>Flutter Developer Intern</h3>
-    <p>United Group (Orange Solution Ltd) — Aug 2023 to Jan 2024</p>
+    <p>United Group (Orange Solution Ltd) | Aug 2023 – Jan 2024</p>
     <ul>
-      <li>Built scalable Flutter applications</li>
-      <li>Optimized performance & reduced app size</li>
+      <li>Delivered scalable Flutter applications</li>
+      <li>Optimized UI performance & memory usage</li>
     </ul>
   </div>
 </section>
 
 <!-- EDUCATION -->
-<section class="reveal">
+<section>
   <h2>Education</h2>
   <div class="card">
-    <p><strong>BSc in Computer Science & Engineering</strong><br>
-      United International University, Dhaka — 2024</p>
+    <strong>BSc in Computer Science & Engineering</strong><br>
+    United International University, Dhaka — 2024
   </div>
 </section>
 
 <footer>
   © 2026 Mohammad Wahab — Senior Mobile Engineer
 </footer>
-
-<script>
-/* Dynamic Expertise Text */
-const roles = [
-  "Flutter Engineer",
-  "iOS (Swift) Developer",
-  "Android (Kotlin) Developer",
-  "Real-Time App Specialist",
-  "Mobile Architecture Expert"
-];
-
-let i = 0;
-const el = document.getElementById("dynamicText");
-
-function rotateText() {
-  el.style.opacity = 0;
-  setTimeout(() => {
-    el.textContent = roles[i];
-    el.style.opacity = 1;
-    i = (i + 1) % roles.length;
-  }, 400);
-}
-rotateText();
-setInterval(rotateText, 2500);
-
-/* Scroll Reveal */
-const reveals = document.querySelectorAll(".reveal");
-window.addEventListener("scroll", () => {
-  reveals.forEach(r => {
-    if (r.getBoundingClientRect().top < window.innerHeight - 100) {
-      r.classList.add("show");
-    }
-  });
-});
-</script>
 
 </body>
 </html>
